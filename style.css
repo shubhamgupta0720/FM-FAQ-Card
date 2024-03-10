@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=League+Spartan:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(275, 100%, 97%);
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  background-image: url(./assets/images/background-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  object-fit: contain;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(235, 235, 235);
+}
+
+.active {
+  display: block;
+}
+
+#FAQCard {
+  width: 600px;
+  height: auto;
+  background-color: hsl(0, 0%, 100%);
+  padding: 40px;
+  border-radius: 14px;
+}
+#FAQCard > .card-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#FAQCard > .card-header > h1 {
+  margin-left: 20px;
+  font-size: 50px;
+  font-weight: 700;
+  color: hsl(292, 42%, 14%);
+}
+#FAQCard > .card-header > img {
+  width: 32px;
+}
+#FAQCard > .card-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#FAQCard > .card-question > p {
+  margin: 30px 0px;
+  color: hsl(292, 42%, 14%);
+  font-weight: 700;
+  font-size: 18px;
+}
+#FAQCard > .card-question > p:hover {
+  color: #AD28EB;
+  cursor: pointer;
+}
+#FAQCard > .card-question > .fold {
+  display: none;
+}
+#FAQCard > .card-question:nth-child(2) > .fold {
+  display: block;
+}
+#FAQCard > .card-question:nth-child(2) > .expand {
+  display: none;
+}
+#FAQCard > .card-answer {
+  display: none;
+  margin-bottom: 30px;
+  color: hsl(292, 16%, 49%);
+  transition: 0.3s ease;
+  line-height: 22px;
+}
+#FAQCard > .card-answer:nth-child(3) {
+  display: block;
+}
+
+@media (max-width: 480px) {
+  main {
+    width: 100%;
+    background-image: url(assets/images/background-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  #FAQCard {
+    width: 86%;
+    padding: 22px;
+    border-radius: 8px;
+  }
+  #FAQCard > .card-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0px;
+  }
+  #FAQCard > .card-header > h1 {
+    margin-left: 20px;
+    font-size: 34px;
+    font-weight: 700;
+    color: hsl(292, 42%, 14%);
+  }
+  #FAQCard > .card-header > img {
+    width: 24px;
+  }
+  #FAQCard > .card-question > p {
+    font-size: 16px;
+  }
+  #FAQCard > .card-answer {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

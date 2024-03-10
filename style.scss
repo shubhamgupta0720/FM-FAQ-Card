@@ -1,0 +1,156 @@
+@use './utils/colors' as colors;
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=League+Spartan:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: colors.$LightPink;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/images/background-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(235, 235, 235);
+}
+
+.active{
+    display: block;
+}
+
+#FAQCard{
+    width: 600px;
+    height: auto;
+    background-color: colors.$White;
+    padding: 40px;
+    border-radius: 14px;
+
+    > .card-header{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 10px;
+
+        > h1{
+            margin-left: 20px;
+            font-size: 50px;
+            font-weight: 700;
+            color: colors.$DarkPurple;
+        }
+
+        > img{
+            width:32px;
+        }
+    }
+
+    > .card-question{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        > p{
+            margin: 30px 0px;
+            color: colors.$DarkPurple;
+            font-weight: 700;
+            font-size: 18px;
+
+            &:hover{
+                color: colors.$DarkPink;
+                cursor: pointer;
+            }
+        }
+
+        > .fold{
+            display: none;
+        }
+    }
+
+    > .card-question:nth-child(2){
+
+        > .fold{
+            display: block;
+        }
+
+        > .expand{
+            display: none;
+        }
+    }
+
+    > .card-answer{
+        display: none;
+        margin-bottom: 30px;
+        color: colors.$GrayishPurple;
+        transition: 0.3s ease;
+        line-height: 22px;
+    }
+
+    > .card-answer:nth-child(3){
+        display: block;
+    }
+}
+
+@media (max-width:480px){
+    
+    main{
+        width: 100%;
+        background-image: url(assets/images/background-pattern-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    #FAQCard{
+        width: 86%;
+        padding: 22px;
+        border-radius: 8px;
+
+        > .card-header{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 0px;
+    
+            > h1{
+                margin-left: 20px;
+                font-size: 34px;
+                font-weight: 700;
+                color: colors.$DarkPurple;
+            }
+    
+            > img{
+                width:24px;
+            }
+        }
+
+        > .card-question{
+            
+            > p{
+                font-size: 16px;
+            }
+        }
+
+        > .card-answer{
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+}
